@@ -22,7 +22,6 @@ describe('identity()', () => {
   });
 
   it('returns the same boolean if given a boolean', () => {
-    const val = false;
-    expect(_.identity(val)).toBe(val);
+    expect(_.identity(false)).toBe(false);
   });
 });

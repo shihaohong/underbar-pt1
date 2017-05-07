@@ -11,4 +11,14 @@ describe('pluck()', () => {
     expect(result).toEqual([12, 999, 14]);
   });
 
+  it('returns an array of just mascots, given an array of schools', () => {
+    const schools = [
+      { name: 'USC', mascot: 'Traveler'},
+      { name: 'UCLA', mascot: 'Bruin'},
+      { name: 'UCR', mascot: 'Scotty Highlander'}
+    ];
+
+    const result = _.pluck(schools, 'mascot');
+    expect(result).toEqual(['Traveler', 'Bruin', 'Scotty Highlander']);
+  });
 });

@@ -18,4 +18,16 @@ describe('reject()', () => {
     const orderItems = _.reject(order, (value) => value === null);
     expect(orderItems).toEqual(['burger', 'ketchup', 'cookie']);
   });
+
+  it('rejects all non-A subjects from an object', () => {
+    const reportCard = {
+      'history': 'A',
+      'art history': 'C',
+      'math': 'A',
+      'physics': 'A'
+    }
+
+    const failedClasses = _.reject(reportCard, (value) => value === 'A');
+    expect(failedClasses).toEqual(['C']);
+  });
 });

@@ -39,5 +39,18 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
+
+  it('iterates through every element of an array, multiplying it by 2 and returning a new array with the results', () => {
+    const arr = [1, 2, 3];
+    const newArr = [];
+    _.each(arr, function(element, index, array) {
+      newArr[index] = element * 2;
+    });
+
+    expect(newArr[0]).toBe(2);
+    expect(newArr[1]).toBe(4);
+    expect(newArr[2]).toBe(6);
+
+  });
 });
 

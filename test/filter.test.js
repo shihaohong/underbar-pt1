@@ -23,4 +23,9 @@ describe('filter()', () => {
     const abilityScores = _.filter(characterAttributes, (value) => !isNaN(value));
     expect(abilityScores).toEqual([4, 7, 10, 16, 5, 4]);
   });
+
+  it('filters to only non-numeric values', () => {
+    const arr = ['Shi-Hao', 'is', 'number', 1, 'zero :('];
+    expect(_.filter(arr, values => isNaN(values))).toEqual(['Shi-Hao', 'is', 'number', 'zero :(']);
+  });
 });

@@ -31,4 +31,12 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns true if the target value is among the values of an object', () => {
+    const items = {
+      'item1': 'PokeBall',
+      'item2': 'Rare Candy',
+      'item3': 'Great Ball'
+    };
+    expect(_.contains(items, 'Great Ball')).toBe(true);
+  });
 });

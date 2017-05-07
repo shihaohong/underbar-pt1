@@ -18,4 +18,9 @@ describe('isArrayLike()', () => {
     };
     expect(_.isArrayLike(nonArrayLikeObj)).toBe(false);
   });
+
+  it('returns false for strings', () => {
+    const string = 'hello world';
+    expect(_isArrayLike(string)).toBe(false);
+  });
 });
